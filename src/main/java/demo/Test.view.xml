@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dataType1" parent="Map">
+      <Property name="autoCreatePropertyDefs">true</Property>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dataSet1">
+      <Property name="dataType">[dataType1]</Property>
+      <Property name="dataProvider">#loadDatas</Property>
+    </DataSet>
+    <ToolBar>
+      <ToolBarButton>
+        <Property name="caption">export</Property>
+        <Property name="action">export2ReportAction1</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <Property name="caption">export2</Property>
+        <Property name="action">export2ReportAction2</Property>
+      </ToolBarButton>
+    </ToolBar>
+    <DataGrid id="dataGrid1">
+      <Property name="dataSet">dataSet1</Property>
+      <Property name="autoCreateColumns">true</Property>
+      <DataColumn>
+        <Property name="name">id</Property>
+        <Property name="property">id</Property>
+        <Editor/>
+      </DataColumn>
+      <DataColumn>
+        <Property name="name">name</Property>
+        <Property name="property">name</Property>
+        <Editor/>
+      </DataColumn>
+    </DataGrid>
+    <Export2ReportAction id="export2ReportAction1">
+      <Property name="template">dataGrid1</Property>
+    </Export2ReportAction>
+    <Export2ReportAction id="export2ReportAction2">
+      <Property name="template">dataGrid1</Property>
+      <Property name="extension">xlsx</Property>
+    </Export2ReportAction>
+  </View>
+</ViewConfig>
