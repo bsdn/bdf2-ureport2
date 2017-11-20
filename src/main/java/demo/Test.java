@@ -37,7 +37,7 @@ public class Test {
 	}
 
 	public static void main(String[] args) throws Exception {
-		String path = "D:\\projects\\nuoya\\Document\\2.需求文档\\tt.docx";
+		String path = "D:\\projects\\nuoya\\3.升级脚本\\UAT发布脚本-20170703\\出资通知书模板\\t1.docx";
 		InputStream is = new FileInputStream(new File(path));
 		WordprocessingMLPackage wordMLPackage = WordprocessingMLPackage.load(is);
 		HTMLSettings htmlSettings = Docx4J.createHTMLSettings();

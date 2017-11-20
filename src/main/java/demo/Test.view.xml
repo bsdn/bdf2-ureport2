@@ -5,6 +5,8 @@
   <Model>
     <DataType name="dataType1" parent="Map">
       <Property name="autoCreatePropertyDefs">true</Property>
+      <PropertyDef name="id"/>
+      <PropertyDef name="name"/>
     </DataType>
   </Model>
   <View>
@@ -12,6 +14,29 @@
       <Property name="dataType">[dataType1]</Property>
       <Property name="dataProvider">#loadDatas</Property>
     </DataSet>
+    <AutoForm id="autoForm1">
+      <Property name="dataSet">dataSet1</Property>
+      <AutoFormElement>
+        <Property name="name">id</Property>
+        <Property name="property">id</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">name</Property>
+        <Property name="property">name</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">id</Property>
+        <Property name="property">id</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">name</Property>
+        <Property name="property">name</Property>
+        <Editor/>
+      </AutoFormElement>
+    </AutoForm>
     <ToolBar>
       <ToolBarButton>
         <Property name="caption">export</Property>
@@ -20,6 +45,10 @@
       <ToolBarButton>
         <Property name="caption">export2</Property>
         <Property name="action">export2ReportAction2</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <Property name="caption">expautoform</Property>
+        <Property name="action">expAutoForm1</Property>
       </ToolBarButton>
     </ToolBar>
     <DataGrid id="dataGrid1">
@@ -38,10 +67,16 @@
     </DataGrid>
     <Export2ReportAction id="export2ReportAction1">
       <Property name="template">dataGrid1</Property>
+      <Property name="extension">xls</Property>
     </Export2ReportAction>
     <Export2ReportAction id="export2ReportAction2">
       <Property name="template">dataGrid1</Property>
       <Property name="extension">xlsx</Property>
+    </Export2ReportAction>
+    <Export2ReportAction id="expAutoForm1">
+      <Property name="template">autoForm1</Property>
+      <Property name="titleName">ddddd</Property>
+      <Property name="showTitle">true</Property>
     </Export2ReportAction>
   </View>
 </ViewConfig>
